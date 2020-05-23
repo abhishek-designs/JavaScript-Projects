@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5514dc631b.js" crossorigin="anonymous"></script>
+    <title>Overlay</title>
+    <style>
+        *
+        {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html,body
+        {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container
+        {
+            position:absolute;
+            background:#333;
+            padding:0.7rem;
+            border-radius:40px;
+            transition:all 0.3s ease;
+            
+        }   
+
+        .search-text
+        {
+            
+            border:none;
+            outline-width:0;
+            background:#333; 
+            
+            /* width:0;
+            height:0; */
+            width:0px;
+            float:left;
+            color:#fff;
+            line-height:2.8;
+            transition:all 0.3s ease;
+        } 
+
+        .btn
+        {
+            text-decoration:none;
+            /* background:orange; */
+            color:#fff;
+            height:40px;
+            width:40px;
+            border-radius:50%;
+            float:right;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            transition:all 0.3s ease;
+        
+        }    
+
+        .container:focus-within > .search-text
+        {
+            /* background:#fff; */
+            width:200px;
+        }
+
+       
+        .container:focus-within > .btn
+        {
+            background:orange;
+            color:#333;
+        }
+
+        /* .btn:active .container
+        {
+            padding:0.7rem;
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" name="search" id="search" class="search-text" placeholder="Search">
+        <a href="#" class="btn"><i class="fa fa-search"></i></a>
+    </div>
+</body>
+</html>
