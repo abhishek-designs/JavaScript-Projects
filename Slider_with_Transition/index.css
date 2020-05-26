@@ -1,0 +1,152 @@
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body
+{
+    height:100vh;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* overflow-x: hidden; */
+}
+
+#home
+{
+    position:relative;
+    height:100%;
+    overflow:hidden;
+}
+
+.slide
+{
+    position:absolute;
+    height:100%;
+    width:100%;
+    display:none;
+    top:0;
+    left:0;
+    z-index:1;
+    padding:0 1rem;
+    background:no-repeat center center/cover;
+    animation:slide 2s ease;
+}
+
+@keyframes slide
+{
+    0%
+    {
+        transform:scale(1.1);
+    }
+    100%
+    {
+        transform:scale(1);
+    }
+}
+
+.slide1
+{
+    background:url('./img/adult-architecture-athlete-boardwalk-221210.jpg') no-repeat center center/cover;
+}
+
+.slide1
+{
+    background:url('./img/an-on-treadmill-1954524.jpg') no-repeat center center/cover;
+}
+
+.slide1
+{
+    background:url('./img/person-holding-barbell-841130.jpg') no-repeat center center/cover;
+}
+
+.active
+{
+    display:flex;
+}
+
+.container
+{
+    max-width:1100px;
+    margin:auto;
+}
+
+.caption
+{
+    color:#fff;
+    display:flex;
+    animation:effect 2s ease forwards;
+}
+
+@keyframes effect
+{
+    0%
+    {
+        transform:translateX(-1000px);
+    }
+    100%
+    {
+        transform:translateX(0);
+    }
+}
+
+.controls .prev,
+.controls .next
+{
+    display:inline-block;
+    position:absolute;
+    background:green;
+    font-size:2rem;
+    z-index:2;
+    top:50%;
+    height:50px;
+    width:60px;
+    color:#fff;
+    padding:1rem;
+    line-height:15px;
+    cursor:pointer;
+    transition:all 0.3s ease;
+}
+
+.controls .next
+{
+    right:0;
+}
+
+.controls .prev
+{
+    left:0;
+}
+
+.controls .prev:hover,
+.controls .next:hover
+{
+    background:#fff;
+    color:green;
+}
+
+.indicator
+{
+    position:absolute;
+    left:50%;
+    top:90%;
+    transform:translateX(-50px);
+    z-index:2;
+    
+}
+
+.indicator div
+{
+    display:inline-block;
+    height:20px;
+    width:20px;
+    border-radius:50%;
+    background:#fff;
+    margin-left:1rem;
+    transition:transform 0.3s ease;
+}
+
+.current
+{
+    transform:scale(1.3);
+}
