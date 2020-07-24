@@ -53,9 +53,5 @@ sliderContain.addEventListener("transitionend", function () {
   }
 });
 
-for(i=0; i<=2; i++)
-{
-  setInterval(nextSlide(),3000);
-
-}
+let timer = setInterval(nextSlide,3000);
         

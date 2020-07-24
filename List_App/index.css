@@ -1,0 +1,79 @@
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html body
+{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height:1.4;
+}
+
+a
+{
+    text-decoration:none;
+    color:#333;
+}
+
+.btn,.btn-add
+{
+    display:inline-block;
+    padding:0.6rem 1rem;
+    border-radius:8px;
+    cursor:pointer;
+    color:#fff;
+
+}
+
+.btn-add
+{
+    /* transform:translateY(-15rem); */
+    width:9rem;
+    text-align:center;
+    padding:1.5rem 0;
+}
+
+.btn{background:red;}
+.btn-add{background:rgb(30, 194, 30);}
+
+.btn:hover
+{
+    background:rgb(255, 56, 56);
+}
+.btn-add:hover
+{
+    background:rgb(64, 206, 64);
+}
+
+
+.container
+{
+    margin:auto;
+    max-width:900px;
+}
+
+.container .list-item .list-row
+{
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+    padding:1rem;
+    margin-top:0.6rem;
+    box-shadow:0 0 9px #ccc;
+    border-radius:15px;
+
+}
+
+.container .total-tab
+{
+    display:flex;
+    padding:0.6rem;
+}
+
+.container .total-tab p
+{
+    font-size:1.5rem;
+    margin-right:1rem;
+}

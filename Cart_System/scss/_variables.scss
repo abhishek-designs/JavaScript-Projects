@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+$main-color:#006eff;//#006eff
+$light-color:#fff;
+$semi-med-color:darken($light-color,3%);
+$med-color:darken(#bbb,5%);
+$dark-color:#333;
+$red-color:#ff2600;
+$green-color:rgb(12, 201, 12);
+$max-width:1300px;
+$max-width-m:330px;
+$anim-speed:0.3s;
+$main-font:"Cairo",sans-serif;
+$logo-font:"Russo One",sans-serif;
+$secondary-font:"Maven Pro",sans-serif;
