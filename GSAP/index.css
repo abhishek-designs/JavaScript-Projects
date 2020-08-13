@@ -1,0 +1,179 @@
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+a
+{
+    text-decoration:none;
+    color:#333;
+}
+
+ul
+{
+    list-style:none;
+}
+
+.py-1
+{
+    padding:1rem 0;
+}
+.py-2
+{
+    padding:2rem 0;
+}
+.py-3
+{
+    padding:3rem 0;
+}
+
+.head-1
+{
+    font-size:2.5rem;
+    position:relative;
+}
+.head-1::after
+{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+
+    /* transform:scaleY(0); */
+    transform-origin:top;
+    background:#fff;
+}
+.head-2
+{
+    font-size:1.7rem;
+}
+.head-3
+{
+    font-size:1.5rem;
+}
+
+.lead-1
+{
+    font-size:1.8rem;
+}
+.lead-2
+{
+    font-size:1.6rem;
+}
+.lead-3
+{
+    font-size:1.4rem;
+}
+
+.btn
+{
+    display:inline-block;
+    cursor:pointer;
+    border:none;
+    padding:0.6rem 1rem;
+    margin-top:1.5rem;
+    border-radius:8px;
+    border:1.5px solid transparent;
+    transition:all 0.3s ease;
+}
+
+.btn-primary
+{
+    background:#8a0e8a;
+    color:#fff;
+}
+
+.btn-primary:hover
+{
+    background:#fff;
+    color:#8a0e8a;
+    border-color:#8a0e8a;
+}
+
+.logo a
+{
+    color:#8a0e8a;
+}
+
+.anim-btn
+{
+    transform:translateY(2rem);
+    position:absolute;
+    margin-left:2rem;
+}
+
+.box
+{
+    position:absolute;
+    height:40vh;
+    width:100%;
+    /* left:0; */
+    right:-200px;
+    /* transform:translateX(300px); */
+    background:#8a0e8a;
+}
+
+.container
+{
+    max-width:80%;
+    margin:0 auto;
+}
+
+/* Main styling */
+html,body
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height:1.4;
+    overflow:hidden;
+    height:100vh;
+}
+
+#navbar .container
+{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+
+}
+
+#navbar .container ul
+{
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+}
+
+#navbar .container ul li 
+{
+    margin-left:2rem;
+}
+
+#showcase
+{
+    position:relative;
+}
+
+#showcase .container
+{
+    margin-top:4rem;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-gap:1rem;
+}
+
+#showcase .container .showcase-content .head-1
+{
+    padding-bottom:1rem;
+}
+
+#showcase .container .showcase-object
+{
+    position:relative;
+}
+
+
