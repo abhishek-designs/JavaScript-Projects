@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body
+{
+    font-family:'Ubuntu',sans-serif;
+    line-height:1.4;
+    color:#333;
+    background:#f5f5f5;
+    height:100vh;
+}
+
+.head
+{
+    text-transform:uppercase;
+    font-size:2.4rem;
+}
+
+.lead
+{
+    font-size:1.3rem;
+    color:#bdbdbd;
+}
+
+.container
+{
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container .player-contain
+{
+    height:75vh;
+    width:50vh;
+    padding:1.5rem 1rem;
+    background:#fff;
+    box-shadow:0 5px 10px rgba(0,0,0,0.2);
+    border-radius:20px;
+}
+
+.container .player-contain .player-content
+{
+    text-align:center;
+}
+
+.container .player-contain .album-art
+{
+    height:15rem;
+    width:15rem;
+    margin:2rem auto;
+}
+
+.spin
+{
+    animation:spin 4s linear infinite;
+}
+
+@keyframes spin 
+{
+    from
+    {
+        transform:rotate(0deg);
+    }
+    to
+    {
+        transform:rotate(360deg);
+    }
+}
+
+.container .player-contain .album-art img
+{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+.container .player-contain .player-controls
+{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    margin-top:3rem;
+}
+
+.container .player-contain .player-controls .btn
+{
+    cursor:pointer;
+}
+
+.container .player-contain .player-controls .btn i
+{
+    font-size:1.5rem;
+}
+
+.container .player-contain .player-controls .play-pause-btn
+{
+    height:4rem;
+    width:4rem;
+    background:#333;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container .player-contain .player-controls .play-pause-btn:hover
+{
+    background:#4d4d4d;
+}
+
+.container .player-contain .player-controls .forward-btn:hover i,
+.container .player-contain .player-controls .backward-btn:hover i
+{
+    color:#4d4d4d;
+}

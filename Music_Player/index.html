@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5514dc631b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Music Player</title>
+</head>
+<body>
+    <!-- Overall container -->
+    <div class="container">
+        <!-- Container for the music player -->
+        <div class="player-contain">
+            <!-- Content like artist name & song name -->
+            <div class="player-content">
+                <h1 class="head song-title">Ocean</h1>
+                <p class="lead artist-name">David Davis</p>
+            </div>
+            <!-- Image of the song -->
+            <div class="album-art">
+                <img src="img/ocean.jpg" alt="artist">
+            </div>
+            <!-- Controls for the music player -->
+            <div class="player-controls">
+                <div class="btn backward-btn">
+                    <i class="fa fa-backward"></i>
+                </div>
+                <div class=" btn play-pause-btn">
+                    <i class="fa fa-play"></i>
+                </div>
+                <div class="btn forward-btn">
+                    <i class="fa fa-forward"></i>
+                </div>
+            </div>
+            <audio src="music/David_Davis_-_Ocean.mp3"></audio>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
