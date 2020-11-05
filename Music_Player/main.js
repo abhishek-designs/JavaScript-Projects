@@ -8,6 +8,10 @@ const icon = playBtn.querySelector('i');
 const artist = document.querySelector('.player-content .artist-name');
 const song = document.querySelector('.player-content .song-title');
 const artImg = albumArt.querySelector('img');
+const currTime = document.querySelector('.progress-timing .current-time');
+const duraTime = document.querySelector('.progress-timing .duration-time');
+const progressContain = document.querySelector('.progress-bar');
+const progressBar = progressContain.querySelector('.current-progress');
 
 // All the songs stored on the player
 const songs = [
@@ -39,7 +43,7 @@ playBtn.title = 'Play song';
 let position = 0; 
 
 // Function to play the song
-const playSong = () => {
+const playSong = () => {  // function playSong() { };
 
     playing = true;
     audio.play(); // Playing the audio
@@ -112,3 +116,59 @@ const switchContent = (position) => {
 
     playSong();
 };
+
+// Updating the progress bar and the timings
+audio.addEventListener('timeupdate',(e) => {
+    let {currentTime, duration} = audio; // let currentTime = audio.currentTime;
+
+    // To update the progress according to the current time we have to convert the song current time into percent for the progress width
+    let progressWidth = (currentTime/duration) * 100;
+    progressBar.style.width = `${progressWidth}%`;
+
+    // Rounding off the minutes and seconds
+    let curMin = Math.floor(currentTime / 60);
+    let curSec = Math.floor(currentTime % 60);
+
+    let durationMin = Math.floor(duration / 60);
+    let durationSec = Math.floor(duration % 60);
+
+    // Append zero if the minutes/seconds lesser than 10
+    if(curSec < 10)
+    {
+        curSec = `0${curSec}`;
+        
+    }
+    if(durationSec < 10)
+    {
+        durationSec = `0${durationSec}`;
+    }
+
+    let curTime = `${curMin}:${curSec}`;
+    let durTime = `${durationMin}:${durationSec}`;
+
+    // Update the stats when the audio property gets loaded
+    if(currentTime && duration)
+    {
+        currTime.innerHTML = `<p class="lead-2">${curTime}</p>`;
+        duraTime.innerHTML = `<p class="lead-2">${durTime}</p>`;
+    }
+
+});
+
+// Seek the audio to the time according to the user clicks on the progress bar
+progressContain.addEventListener('click',(e) => {
+    let progressPos = e.offsetX;
+    let progressWidth = progressContain.clientWidth;
+    let songDuration = audio.duration;
+    // console.log(progressPos+','+progressWidth);
+
+    // Carry out the current position through the progress position and width
+    let curPos = (progressPos / progressWidth) * songDuration;
+
+    audio.currentTime = curPos;
+}); 
+
+// Play next song when the current song ends
+audio.addEventListener('ended',() => {
+    console.log('next song')
+});

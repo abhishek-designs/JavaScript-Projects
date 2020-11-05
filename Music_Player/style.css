@@ -19,15 +19,16 @@ html,body
 .head
 {
     text-transform:uppercase;
-    font-size:2.4rem;
+    font-size:2rem;
 }
 
 .lead
 {
-    font-size:1.3rem;
+    font-size:1rem;
     color:#bdbdbd;
 }
 
+/* Container for the overall player */
 .container
 {
     height:100%;
@@ -37,28 +38,33 @@ html,body
     align-items:center;
 }
 
+/* Container for the music player */
 .container .player-contain
 {
     height:75vh;
     width:50vh;
-    padding:1.5rem 1rem;
+    padding:1.5rem 1.6rem;
     background:#fff;
     box-shadow:0 5px 10px rgba(0,0,0,0.2);
     border-radius:20px;
 }
 
+/* Content on the music player */
 .container .player-contain .player-content
 {
     text-align:center;
 }
 
+/* Album art styling */
 .container .player-contain .album-art
 {
     height:15rem;
     width:15rem;
-    margin:2rem auto;
+    margin:0 auto;
+    margin-top:2rem;
 }
 
+/* Spin animation when the music is playing */
 .spin
 {
     animation:spin 4s linear infinite;
@@ -76,6 +82,7 @@ html,body
     }
 }
 
+/* Inner album art image styling */
 .container .player-contain .album-art img
 {
     height:100%;
@@ -84,14 +91,16 @@ html,body
     border-radius:50%;
 }
 
+/* Controls styling for the player */
 .container .player-contain .player-controls
 {
     display:flex;
     justify-content:space-around;
     align-items:center;
-    margin-top:3rem;
+    margin-top:1.3rem;
 }
 
+/* Button styling */
 .container .player-contain .player-controls .btn
 {
     cursor:pointer;
@@ -123,4 +132,56 @@ html,body
 .container .player-contain .player-controls .backward-btn:hover i
 {
     color:#4d4d4d;
+}
+
+/* Music stats styling */
+.container .player-contain .music-stats .progress-timing
+{
+    display:flex;
+    justify-content:space-between;
+    margin-top:1rem;
+}
+
+/* Progress bar styling */
+.container .player-contain .music-stats .progress-bar
+{
+    position:relative;
+    height:0.4rem;
+    width:100%;
+    margin-top:0.7rem;
+    border-radius:20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2),
+                0 -2px 5px rgba(0,0,0,0.2);
+    cursor:pointer;
+}
+
+.container .player-contain .music-stats .progress-bar .current-progress
+{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:25%;
+    background:#333;
+    border-radius:inherit;
+}
+
+.container .player-contain .music-stats .progress-bar:hover .current-progress:after
+{
+    transform:scale(1);
+}
+
+.container .player-contain .music-stats .progress-bar .current-progress::after
+{
+    content:'';
+    position:absolute;
+    top:-3px;
+    right:0;
+    bottom:0;
+    height:0.7rem;
+    width:0.7rem;
+    background:#333;
+    border-radius:50%;
+    transform:scale(0);
+    transition:transform 0.2s ease;
 }
