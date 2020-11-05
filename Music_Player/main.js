@@ -13,7 +13,7 @@ const duraTime = document.querySelector('.progress-timing .duration-time');
 const progressContain = document.querySelector('.progress-bar');
 const progressBar = progressContain.querySelector('.current-progress');
 
-// All the songs stored on the player
+// All the songs stored on the player as an array of objects
 const songs = [
     {
         songName : 'Ocean',
@@ -43,7 +43,7 @@ playBtn.title = 'Play song';
 let position = 0; 
 
 // Function to play the song
-const playSong = () => {  // function playSong() { };
+const playSong = () => {  // Arrow function, this could be written as function playSong() { };
 
     playing = true;
     audio.play(); // Playing the audio
@@ -65,12 +65,12 @@ const pauseSong = () => {
 // Play the audio through the play btn
 playBtn.addEventListener('click',() => {
 
-    playing ? pauseSong() : playSong();
+    playing ? pauseSong() : playSong(); // Ternary operator
 
 });
 
-// Adding functionality to prev & next btn
-nextBtn.addEventListener('click',() => {
+// Function to play next song
+const nextSong = () => {
     // Play the next song
     if(position == songs.length - 1)
     {
@@ -85,10 +85,13 @@ nextBtn.addEventListener('click',() => {
 
     // Changing the song name and artist accroding to the condition
     switchContent(position);
-    console.log(songs[position].songName+' is playing by '+songs[position].artistName);
-});
+};
 
-prevBtn.addEventListener('click',() => {
+// Adding functionality to next btn
+nextBtn.addEventListener('click',nextSong);
+
+// Function to play previous song
+const prevSong = () => {
     // Play the previous song
     if(position == 0)
     {
@@ -100,20 +103,22 @@ prevBtn.addEventListener('click',() => {
         // Backwarding the music
         position--;
     }
-
+    
     // Changing the song name and artist accroding to the condition
     switchContent(position);
+};
 
-    console.log(songs[position].songName+' is playing by '+songs[position].artistName);
-});
+// Adding functionality to next btn
+prevBtn.addEventListener('click',prevSong);
 
 // Function to switch the content
 const switchContent = (position) => {
     song.innerHTML = songs[position].songName;
     artist.innerHTML = songs[position].artistName;
-    artImg.src = 'img/'+songs[position].songArt;
-    audio.src = 'music/'+songs[position].song;
+    artImg.src = `img/${songs[position].songArt}`; // Template literals this could be written as 'img/'+songs[position].songArt;
+    audio.src = `music/${songs[position].song}`;
 
+    // Play the song
     playSong();
 };
 
@@ -160,7 +165,6 @@ progressContain.addEventListener('click',(e) => {
     let progressPos = e.offsetX;
     let progressWidth = progressContain.clientWidth;
     let songDuration = audio.duration;
-    // console.log(progressPos+','+progressWidth);
 
     // Carry out the current position through the progress position and width
     let curPos = (progressPos / progressWidth) * songDuration;
@@ -169,6 +173,4 @@ progressContain.addEventListener('click',(e) => {
 }); 
 
 // Play next song when the current song ends
-audio.addEventListener('ended',() => {
-    console.log('next song')
-});
+audio.addEventListener('ended',nextSong);

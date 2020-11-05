@@ -161,7 +161,7 @@ html,body
     top:0;
     left:0;
     height:100%;
-    width:25%;
+    width:0;
     background:#333;
     border-radius:inherit;
 }
