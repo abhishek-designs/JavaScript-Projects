@@ -1,4 +1,4 @@
 ## Awesome Music player
 ___
 
-<img src = 'img/player_img.png' alt = 'Player image'>
+<a href='https://osum-playz.netlify.app/'><img src = 'img/player_img.png' alt = 'Player image'></a>
