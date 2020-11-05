@@ -126,7 +126,7 @@ const switchContent = (position) => {
 audio.addEventListener('timeupdate',(e) => {
     let {currentTime, duration} = audio; // let currentTime = audio.currentTime;
 
-    // To update the progress according to the current time we have to convert the song current time into percent for the progress width
+    // To update the progress according to the current time we have to convert the song's current time into percent for the progress width
     let progressWidth = (currentTime/duration) * 100;
     progressBar.style.width = `${progressWidth}%`;
 
